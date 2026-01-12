@@ -15,7 +15,7 @@ namespace HintMachine.Models
     public class ArchipelagoHintSession
     {
         private static readonly string[] TAGS = { "AP", "HintGenerator", "TextOnly" };
-        private static readonly Version VERSION = new Version(0, 4, 1);
+        private static readonly Version VERSION = new Version(0, 6, 7);
 
         public ArchipelagoSession Client { get; private set; }
 
@@ -169,7 +169,6 @@ namespace HintMachine.Models
                 if (PendingRandomHints > 0 && Client.Socket.Connected)
                 {
                     PendingRandomHints -= 1;
-
                     List<long> missingLocations = Client.Locations.AllMissingLocations.ToList();
                     foreach (long locationId in GetAlreadyHintedLocations())
                         missingLocations.Remove(locationId);
@@ -183,7 +182,7 @@ namespace HintMachine.Models
                         Client.Socket.SendPacketAsync(new LocationScoutsPacket
                         {
                             Locations = new long[] { pendingHintLocationID },
-                            CreateAsHint = true
+                            CreateAsHint = 1
                         });
                         Thread.Sleep(Globals.HintQueueInterval);
                     }
