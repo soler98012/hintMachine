@@ -132,6 +132,7 @@
     <Compile Include="Models\ArchipelagoHintSession.cs" />
     <Compile Include="Models\Games\BPMConnector.cs" />
     <Compile Include="Models\Games\AdvanceWarsDualStrikeConnector.cs" />
+    <Compile Include="Models\Games\GuitarHeroIIIConnector.cs" />
     <Compile Include="Models\Games\NubbysNumberFactoryConnector.cs" />
     <Compile Include="Models\Games\PaintTheTownRedConnector.cs" />
     <Compile Include="Models\Games\NexMachinaConnector.cs" />
